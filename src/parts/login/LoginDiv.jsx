@@ -1,14 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
-import { TOAST_CONFIG } from '../Constants';
+import { TOAST_CONFIG } from '../../Constants';
 
 import { FaLockOpen, FaLock } from 'react-icons/fa';
 
-import { AuthContext } from '../contexts/AuthContext';
-import { loginService, } from '../services/account';
+import { AuthContext } from '../../contexts/AuthContext';
+import { loginService, getMeDetailsService } from '../../services/account';
 
 const LoginDiv = () => {
+
+    const navigate = useNavigate();
 
     // email and password validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,6 +31,9 @@ const LoginDiv = () => {
 
     // store state of password field (is password vieweable or not)
     const [viewPass, setViewPass] = React.useState(false);
+
+    // store authentication context details
+    const { login } = React.useContext(AuthContext);
 
     // called to validate email and password field
     const validateData = () => {
@@ -99,7 +105,18 @@ const LoginDiv = () => {
                 render: "Logged in successfully...",
                 type: "success"
             });
-        }
+
+            localStorage.setItem("token", JSON.stringify(resp.json));
+            const userResp = await getMeDetailsService();
+            if (!userResp.status) {
+                alert(userResp.json.message);
+            }
+            else {
+                login(userResp.json);
+                console.log(userResp.json);
+                navigate("/dashboard");
+            }
+        }   
     }
 
     // called on clicking on 'Sign in with Google'
@@ -132,7 +149,7 @@ const LoginDiv = () => {
                     <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
                     <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
                         Don't have an account yet?
-                        <a className="ms-1 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500" href="../examples/html/signup.html">
+                        <a className="ms-1 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500" href="/register">
                             Sign up here
                         </a>
                     </p>

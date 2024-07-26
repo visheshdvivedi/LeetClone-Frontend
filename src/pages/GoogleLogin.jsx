@@ -8,7 +8,6 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 const GoogleLogin = () => {
 
     const navigate = useNavigate();
-
     const { login } = React.useContext(AuthContext);
     const [params, setParams] = useSearchParams();
 
@@ -16,9 +15,11 @@ const GoogleLogin = () => {
         const resp = await getMeDetailsService();
         if (!resp.status) {
             alert(resp.json.message);
+            navigate("/login");
         }
         else {
-            login(resp.data);
+            login(resp.json);
+            navigate("/dashboard");
         }
     }
 
@@ -29,7 +30,6 @@ const GoogleLogin = () => {
         if (access && refresh) {
             localStorage.setItem("token", JSON.stringify({ access: access, refresh: refresh }));
             performLogin();
-            navigate("/dashboard");
         }
         else {
             alert("Tokens not provided");

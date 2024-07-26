@@ -15,7 +15,7 @@ const HeroDiv = () => {
     ]
 
     return (
-        <div class="relative overflow-hidden before:absolute before:top-0 before:start-1/2 dark:bg-black before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+        <div class="relative overflow-hidden before:absolute before:top-0 before:start-1/2 dark:bg-black before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2 bg-white">
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10">
 
                 <div class="mt-5 max-w-2xl text-center mx-auto">

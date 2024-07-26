@@ -1,33 +1,14 @@
 import axios from "axios";
-import { LOGIN_URL, ACCOUNT_URL } from "../Constants";
+import { PROBLEM_URL } from "../Constants";
 
-export const loginService = (data) => {
-    return axios.post(
-        LOGIN_URL,
-        data
-    )
-    .then(resp => { return { status: true, json: resp.data } })
-    .catch (err => { return { status: false, json: err.toJSON() } })
-}
-
-export const registerService = (data) => {
-    return axios.post(
-        ACCOUNT_URL,
-        data
-
-    )
-    .then(resp => { return { status: true, json: resp.data } })
-    .catch(err => { return { status: false, json: err.toJSON() } })
-}
-
-export const getMeDetailsService = () => {
+export const listProblemsService = (filters) => {
     const token = JSON.parse(localStorage.getItem("token"));
    
     if (!token)
         return { status: false, json: { 'message': "Token not found" } }
 
     return axios.get(
-        ACCOUNT_URL + 'me',
+        PROBLEM_URL,
         {
             headers: { Authorization: "Bearer " + token.access }
         }
@@ -36,14 +17,14 @@ export const getMeDetailsService = () => {
     .catch(err => { return { status: false, json: err.toJSON() } })
 }
 
-export const getRecentSubmissionsService = () => {
+export const retrieveProblemService = (public_id) => {
     const token = JSON.parse(localStorage.getItem("token"));
    
     if (!token)
         return { status: false, json: { 'message': "Token not found" } }
 
     return axios.get(
-        ACCOUNT_URL + 'recent_submissions',
+        PROBLEM_URL + public_id + "/",
         {
             headers: { Authorization: "Bearer " + token.access }
         }
@@ -52,14 +33,48 @@ export const getRecentSubmissionsService = () => {
     .catch(err => { return { status: false, json: err.toJSON() } })
 }
 
-export const getUserStatisticsService = () => {
+export const retrieveSubmissionsService = (public_id) => {
     const token = JSON.parse(localStorage.getItem("token"));
    
     if (!token)
         return { status: false, json: { 'message': "Token not found" } }
 
     return axios.get(
-        ACCOUNT_URL + 'stats/',
+        PROBLEM_URL + public_id + "/submissions/",
+        {
+            headers: { Authorization: "Bearer " + token.access }
+        }
+    )
+    .then(resp => { return { status: true, json: resp.data } })
+    .catch(err => { return { status: false, json: err.toJSON() } })
+}
+
+export const runCodeService = (public_id, language_id, code) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+   
+    if (!token)
+        return { status: false, json: { 'message': "Token not found" } }
+
+    return axios.post(
+        PROBLEM_URL + public_id + "/run/",
+        { language_id: language_id, code: btoa(code) },
+        {
+            headers: { Authorization: "Bearer " + token.access }
+        }
+    )
+    .then(resp => { return { status: true, json: resp.data } })
+    .catch(err => { return { status: false, json: err.toJSON() } })
+}
+
+export const submitCodeService = (public_id, language_id, code) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+   
+    if (!token)
+        return { status: false, json: { 'message': "Token not found" } }
+
+    return axios.post(
+        PROBLEM_URL + public_id + "/submit/",
+        { language_id: language_id, code: btoa(code) },
         {
             headers: { Authorization: "Bearer " + token.access }
         }

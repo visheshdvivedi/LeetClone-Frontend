@@ -4,7 +4,7 @@ import { FaGoogle, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer class="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto dark:bg-black">
+        <footer class="mt-auto w-full py-5 sm:px-6 lg:px-8 mx-auto bg-transparent">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
                 <div>
                     <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">LeetClone</a>

@@ -10,8 +10,9 @@ export const TOAST_CONFIG = {
     pauseOnFocusLoss: true,
     draggable: true,
     pauseOnHover: true,
-    theme: "light"
+    theme: "dark"
 }
 
 export const LOGIN_URL = BASE_URL + "/token/";
 export const ACCOUNT_URL = BASE_URL + "/account/";
+export const PROBLEM_URL = BASE_URL + "/problem/";
