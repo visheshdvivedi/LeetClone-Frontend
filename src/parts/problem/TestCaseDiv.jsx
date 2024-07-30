@@ -14,7 +14,7 @@ const TestCaseDiv = ({ problem }) => {
                     </button>
                 ))}
             </div>
-            <div className='flex flex-col gap-2 mt-3 overflow-y-scroll'>
+            <div className='flex flex-col gap-2 mt-3'>
                 {testcases[selectedCase].inputs.map(input => (
                     <div className='flex flex-col text-sm'>
                         <span className='py-1 text-gray-400'>{input.name} = </span>

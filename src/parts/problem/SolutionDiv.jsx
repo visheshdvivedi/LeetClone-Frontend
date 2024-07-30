@@ -3,7 +3,7 @@ import React from 'react';
 import { Editor } from '@monaco-editor/react';
 import Markdown from 'react-markdown';
 
-const SolutionDiv = ({ solution }) => {
+const SolutionDiv = ({ solution, preview }) => {
 
     const implementations = solution.implementations;
 
@@ -39,7 +39,7 @@ const SolutionDiv = ({ solution }) => {
     }, [selectedLang]);
 
     return (
-        <div className="px-5 py-4 flex flex-col gap-5 h-[500px]" style={{ overflow: "scroll" }}>
+        <div className="px-5 py-4 flex flex-col gap-5 h-[600px]" style={{ overflow: "scroll" }}>
             <span className='text-xl font-bold'>Approach 1: { solution.name }</span>
             <span className='text-lg font-bold'>Intution</span>
             <span className='text-sm'>{ solution.intution }</span>
@@ -54,7 +54,11 @@ const SolutionDiv = ({ solution }) => {
                 <div className='flex flex-row justify-start items-center'>
                     {implementations.map(implementation => (<button onClick={() => setSelectedLang(implementation.language.name)} className={`px-3 py-2 text-sm ${selectedLang === implementation.language.name ? "border-b-2 border-white" : ""}`}>{implementation.language.name}</button>))}
                 </div>
-                <Editor onMount={onEditorMount} options={{ readOnly: false }} theme='vs-dark' height={"20rem"} defaultLanguage={selectedLang} defaultValue={implementations.find(implementation => implementation.language.name === selectedLang).value} />
+                { preview ? (
+                    <Editor onMount={onEditorMount} options={{ readOnly: true }} theme='vs-dark' height={"20rem"} defaultLanguage={selectedLang} defaultValue={implementations[0].value} />
+                ) : (
+                    <Editor onMount={onEditorMount} options={{ readOnly: true }} theme='vs-dark' height={"20rem"} defaultLanguage={selectedLang} defaultValue={implementations.find(implementation => implementation.language.name === selectedLang).value} />
+                ) }
             </div>
         </div>
     )

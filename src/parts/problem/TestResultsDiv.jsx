@@ -97,7 +97,7 @@ const TestResultsDiv = ({ problem, results, codeRunning }) => {
                 ) : (
                     <div className='flex flex-col text-sm'>
                         <span className='py-1 text-gray-400'>Actual output = </span>
-                        <span readOnly className='px-3 py-2 bg-neutral-700 rounded-lg font-mono text-xs'>{results['submissions'][selectedCase].stdout.replace("\\n", "\n    ")}</span>
+                        <span readOnly className='px-3 py-2 bg-neutral-700 rounded-lg font-mono text-xs'>{results['submissions'][selectedCase].stdout?.replace("\\n", "\n    ")}</span>
                     </div>
                 )}
             </div>

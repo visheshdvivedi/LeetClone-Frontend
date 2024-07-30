@@ -37,7 +37,7 @@ const DashboardPage = () => {
     return (
         <div className='w-full h-full bg-slate-200 dark:bg-black flex flex-col justify-center items-center px-12 gap-5'>
             <Header />
-            <Topbar />
+            {/* <Topbar /> */}
             <div className='w-full flex flex-row justify-start'>
                 <span className='font-bold text-xl dark:text-white'>Welcome, visheshdvivedi</span>
             </div>

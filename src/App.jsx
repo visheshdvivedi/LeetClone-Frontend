@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 
+import 'react-tooltip/dist/react-tooltip.css'
+
 // pages
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -14,6 +16,7 @@ import ProblemsPage from "./pages/ProblemsPage";
 import { AuthContext } from "./contexts/AuthContext";
 import ProfilePage from "./pages/ProfilePage";
 import EditProfilePage from "./pages/EditProfilePage";
+import CreateNewProblem from "./pages/CreateNewProblem";
 
 const AuthenticatedRoute = ({ children }) => {
 
@@ -60,6 +63,11 @@ function App() {
                               <EditProfilePage />
                          </AuthenticatedRoute>
                     } />
+                    {/* <Route path={"/create-problem"} element={
+                         <AuthenticatedRoute>
+                              <CreateNewProblem />
+                         </AuthenticatedRoute>
+                    } /> */}
                </Routes>
           </Router>
      )

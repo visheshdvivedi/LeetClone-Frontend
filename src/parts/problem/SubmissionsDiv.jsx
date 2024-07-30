@@ -120,7 +120,7 @@ const SubmissionsDiv = ({ problem_id, codeSubmitting }) => {
     }
     else if (tableData.length && selectedIndex != null)
         return (
-            <div className="px-5 py-2 flex flex-col gap-1 h-[500px]" style={{ overflow: "scroll" }}>
+            <div className="px-5 py-2 flex flex-col gap-1 h-[600px]" style={{ overflow: "scroll" }}>
                 <button className='text-start text-xs text-gray-400 hover:text-white' onClick={() => setSelectedIndex(null)}>Back to All Submissions</button>
                 <span className={`text-xl ${tableData[selectedIndex].status === 1 ? "text-emerald-500" : "text-red-500"}`}>{ tableData[selectedIndex].status === 1 ? "Accepted" : tableData[selectedIndex].status === 2 ? "Rejected" : "Runtime Error" }</span>
                 <span className='text-gray-400 text-xs'>Submitted at <span className='text-white'>July 20, 2024 09:50</span></span>
@@ -152,7 +152,7 @@ const SubmissionsDiv = ({ problem_id, codeSubmitting }) => {
         )
 
     return (
-        <div className="px-5 py-2 flex flex-col gap-5 h-[500px]" style={{ overflow: "scroll" }}>
+        <div className="px-5 py-2 flex flex-col gap-5 h-[600px]" style={{ overflow: "scroll" }}>
             <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
 
                 <thead className="bg-neutral-800">

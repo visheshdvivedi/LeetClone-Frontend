@@ -16,3 +16,4 @@ export const TOAST_CONFIG = {
 export const LOGIN_URL = BASE_URL + "/token/";
 export const ACCOUNT_URL = BASE_URL + "/account/";
 export const PROBLEM_URL = BASE_URL + "/problem/";
+export const LANGUAGE_URL = BASE_URL + "/language/";

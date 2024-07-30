@@ -2,8 +2,6 @@ import React from 'react'
 import { BiX } from 'react-icons/bi'
 
 const CustomModal = ({ open, title, content, onClose }) => {
-
-
     return (
         <>
             <div className={`${open ? "opacity-70" : "opacity-0 -z-10"} bg-slate-400 size-full fixed top-0 left-0 flex flex-col justify-start items-center py-10 dark:bg-neutral-900 dark:text-white`} style={{ overflow: "none" }}>

@@ -4,7 +4,7 @@ import InfoDiv from "./InfoDiv";
 import SolutionDiv from './SolutionDiv';
 import SubmissionsDiv from "./SubmissionsDiv";
 
-const TabsDiv = ({ problem, codeSubmitting }) => {
+const TabsDiv = ({ problem, codeSubmitting, preview = false }) => {
 
     const [selectedTab, setSelectedTab] = React.useState(0);
 
@@ -29,7 +29,7 @@ const TabsDiv = ({ problem, codeSubmitting }) => {
             </div>
             <div className={`flex-1 overflow-auto ${ selectedTab != 1 && "hidden" }`}>
                 { problem.solutions.map(solution => (
-                    <SolutionDiv solution={solution} />
+                    <SolutionDiv solution={solution} preview={preview} />
                 )) }
             </div>
             <div className={`flex-1 overflow-auto ${ selectedTab != 2 && "hidden" }`}>
