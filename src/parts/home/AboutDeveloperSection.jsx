@@ -14,7 +14,7 @@ const AboutDeveloperSection = () => {
             <img src={developerIcon} width={400}  />
                 <div className='w-1/2 flex flex-col items-start gap-5'>
                     <span className='font-bold bg-clip-text text-violet-600 dark:text-sky-400 text-transparent' style={{ fontSize: "36px" }}>About Me</span>
-                    <p className='text-lg font-bold'>Hello's I'm Vishesh</p>
+                    <p className='text-lg font-bold'>Hey there, I'm Vishesh</p>
                     <p className='text-sm'>I am a passionate and dedicated software developer with a strong background in full-stack development. My goal is to create impactful and user-friendly applications that help people solve real-world problems. With a deep love for coding and problem-solving, I built this platform to help developers like you improve their skills and prepare for technical interviews.</p>
                     <p className='font-bold text-lg'>Skills and Technologies</p>
                     <div className='flex flex-row justify-start items-center gap-3'>

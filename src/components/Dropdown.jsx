@@ -160,10 +160,10 @@ export const TagMultiSelectDropdown = ({ options }) => {
             </button>
 
             <div id="tag-filter-container" className={`${opened ? "" : "hidden"} absolute right-15 top-36 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 w-56 z-20 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" aria-labelledby="hs-dropdown-example`}>
-                <input type="text" className='rounded-lg dark:bg-neutral-700 dark:text-white w-full focus-visible:outline-none px-2 text-xs px-3 py-2' value={search} onChange={(e) => setSearch(e.target.value)} />
+                <input type="text" className='rounded-lg bg-slate-100 dark:bg-neutral-700 dark:text-white w-full focus-visible:outline-none px-2 text-xs px-3 py-2' value={search} onChange={(e) => setSearch(e.target.value)} />
                 <div className='mt-2 flex flex-wrap gap-2'>
                     { getTags().map(option => (
-                        <button onClick={() => toggleSelectedTag(option)} className={` px-2 py-1 rounded-lg ${selectedTags.includes(option) ? "bg-blue-600 dark:text-white" : "bg-neutral-700 dark:text-gray-400"}`}>{option}</button>
+                        <button onClick={() => toggleSelectedTag(option)} className={` px-2 py-1 rounded-lg ${selectedTags.includes(option) ? "bg-blue-600 text-white" : "bg-slate-100 dark:bg-neutral-700 dark:text-gray-400"}`}>{option}</button>
                     )) }
                 </div>    
             </div>

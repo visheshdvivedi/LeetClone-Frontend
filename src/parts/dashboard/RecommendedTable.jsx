@@ -50,7 +50,7 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
 
         for (let i = 0; i < Math.ceil(tableData.length / pageSize); i++) {
             pages.push(
-                <button type="button" class={`py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg ${selectedPage === i ? "bg-slate-300 dark:bg-neutral-600" : "bg-white text-gray-800 hover:bg-gray-50"} shadow-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`} onClick={() => setSelectedPage(i)}>
+                <button type="button" class={`py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg ${selectedPage === i ? "bg-slate-200 dark:bg-neutral-600" : "bg-white text-gray-800 hover:bg-gray-50"} shadow-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`} onClick={() => setSelectedPage(i)}>
                     {i + 1}
                 </button>
             )
