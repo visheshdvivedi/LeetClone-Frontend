@@ -5,7 +5,7 @@ let environment = import.meta.env.VITE_ENVIRONMENT;
 if (environment === 'dev')
     baseURL = "http://localhost:8000";
 else if (environment === 'prod')
-    baseURL = "https://leetclone-backend.azurewebsites.com"; 
+    baseURL = "https://leetclone-backend.azurewebsites.net"; 
 
 export const BASE_URL = baseURL;
 const BASE_API_URL = baseURL + "/api/v1";
