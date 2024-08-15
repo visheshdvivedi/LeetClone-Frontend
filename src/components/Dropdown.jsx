@@ -122,7 +122,7 @@ export const NotificationDropdown = () => {
     )
 }
 
-export const TagMultiSelectDropdown = ({ options }) => {
+export const TagMultiSelectDropdown = ({ options, updateOptions }) => {
 
     const [opened, setOpened] = React.useState(false);
     const [search, setSearch] = React.useState("");
@@ -137,6 +137,7 @@ export const TagMultiSelectDropdown = ({ options }) => {
             newTags.push(name);
         }
         setSelectedTags(newTags);
+        updateOptions(newTags);
     }
 
     const getTags = () => {

@@ -3,6 +3,11 @@ import { PROBLEM_URL } from "../Constants";
 
 export const listProblemsService = (filters) => {
     const token = JSON.parse(localStorage.getItem("token"));
+
+    if (filters.difficulty === "")
+        delete filters['difficulty'];
+    if (filters.tags === "")
+        delete filters['tags'];
    
     if (!token)
         return { status: false, json: { 'message': "Token not found" } }
@@ -10,6 +15,7 @@ export const listProblemsService = (filters) => {
     return axios.get(
         PROBLEM_URL,
         {
+            params: filters,
             headers: { Authorization: "Bearer " + token.access }
         }
     )

@@ -1,4 +1,14 @@
-const BASE_URL = "https://leetclone-backend.onrender.com/api/v1";
+
+let baseURL = "";
+let environment = import.meta.env.VITE_ENVIRONMENT;
+
+if (environment === 'dev')
+    baseURL = "http://localhost:8000";
+else if (environment === 'prod')
+    baseURL = "https://leetclone-backend.azurewebsites.com";
+
+export const BASE_URL = baseURL;
+const BASE_API_URL = baseURL + "/api/v1";
 
 export const TOAST_CONFIG = {
     position: "top-right",
@@ -13,7 +23,7 @@ export const TOAST_CONFIG = {
     theme: "dark"
 }
 
-export const LOGIN_URL = BASE_URL + "/token/";
-export const ACCOUNT_URL = BASE_URL + "/account/";
-export const PROBLEM_URL = BASE_URL + "/problem/";
-export const LANGUAGE_URL = BASE_URL + "/language/";
+export const LOGIN_URL = BASE_API_URL + "/token/";
+export const ACCOUNT_URL = BASE_API_URL + "/account/";
+export const PROBLEM_URL = BASE_API_URL + "/problem/";
+export const LANGUAGE_URL = BASE_API_URL + "/language/";

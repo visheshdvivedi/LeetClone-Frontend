@@ -177,7 +177,7 @@ const RegisterDiv = () => {
         const params = {
             response_type: 'code',
             client_id: "357638932881-7pmk59af7sui48uh4qop0n8uru7pm203.apps.googleusercontent.com",
-            redirect_uri: `https://leetclone-backend.onrender.com/${REDIRECT_URI}`,
+            redirect_uri: `https://leetclone-backend.azurewebsites.com/${REDIRECT_URI}`,
             prompt: 'select_account',
             access_type: 'offline',
             scope

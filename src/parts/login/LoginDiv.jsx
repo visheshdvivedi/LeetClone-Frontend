@@ -2,12 +2,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
-import { TOAST_CONFIG } from '../../Constants';
+import { BASE_URL, TOAST_CONFIG } from '../../Constants';
 
 import { FaLockOpen, FaLock } from 'react-icons/fa';
 
 import { AuthContext } from '../../contexts/AuthContext';
 import { loginService, getMeDetailsService } from '../../services/account';
+
 
 const LoginDiv = () => {
 
@@ -131,8 +132,8 @@ const LoginDiv = () => {
 
         const params = {
             response_type: 'code',
-            client_id: "357638932881-7pmk59af7sui48uh4qop0n8uru7pm203.apps.googleusercontent.com",
-            redirect_uri: `https://leetclone-backend.onrender.com/${REDIRECT_URI}`,
+            client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+            redirect_uri: `${BASE_URL}/${REDIRECT_URI}`,
             prompt: 'select_account',
             access_type: 'offline',
             scope

@@ -34,6 +34,8 @@ const DashboardPage = () => {
         }
     }, [openRecommendModal]);
 
+    console.log('page rerendered');
+
     return (
         <div className='w-full h-full bg-slate-200 dark:bg-black flex flex-col justify-center items-center px-12 gap-5'>
             <Header />
@@ -43,7 +45,7 @@ const DashboardPage = () => {
             </div>
             <CardList />
             <ActivityTable onClickAll={() => setOpenActivityModal(true)} />
-            <RecommendedTable onClickAll={() => setOpenRecommendModal(true)} />
+            <RecommendedTable pagination={false} onClickAll={() => setOpenRecommendModal(true)} pageSize={7} />
             <Footer />
             <CustomModal open={openActivityModal} title={"Recent Submissions"} onClose={() => setOpenActivityModal(false)} content={<ActivityTable pagination={true} header={false} pageSize={8} />} />
             <CustomModal open={openRecommendModal} title={"Recommended Problems"} onClose={() => setOpenRecommendModal(false)} content={<RecommendedTable pagination={true} header={false} pageSize={8} />} />

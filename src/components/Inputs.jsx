@@ -2,12 +2,10 @@ import React from "react";
 
 import { FaSearch } from "react-icons/fa";
 
-export const GlobalSearchBar = ({ placeholder }) => {
+export const GlobalSearchBar = ({ placeholder, value, setValue }) => {
 
     var timer = null;
     var interval = 1000;
-
-    const [value, setValue] = React.useState("");
 
     const onTypingEnd = () => {
         console.log(`Search: ${value}`);
