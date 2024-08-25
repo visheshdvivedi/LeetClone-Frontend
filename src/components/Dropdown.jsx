@@ -43,7 +43,7 @@ export const ProfileDropdown = ({ user }) => {
     return (
         <>
             <button onClick={() => setOpened(!opened)} id="hs-dropdown-example" type="button" className=''>
-                <img src="/profile_pic.png" className='rounded-full' width={25} />
+                <img src="/profile_pic.png" alt="profile picture" className='rounded-full' width={25} />
             </button>
 
             <div id="profile-pic-container" className={`${opened ? "" : "hidden"} absolute right-15 top-12 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 w-56 z-20 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" aria-labelledby="hs-dropdown-example`}>
@@ -92,10 +92,10 @@ export const NotificationDropdown = () => {
 
     return (
         <>
-            <div class="px-3">
-                <strong class="relative inline-flex items-center rounded px-2.5 py-1.5 text-xs font-medium">
+            <div className="px-3">
+                <strong className="relative inline-flex items-center rounded px-2.5 py-1.5 text-xs font-medium">
                     {notifications.length > 0 && (
-                        <span class="absolute h-5 w-5 rounded-full bg-red-500 text-white flex justify-center items-center items" style={{ fontSize: "8px", top: "0px", right: "3px" }}>
+                        <span className="absolute h-5 w-5 rounded-full bg-red-500 text-white flex justify-center items-center items" style={{ fontSize: "8px", top: "0px", right: "3px" }}>
                             <span>{notifications.length}</span>
                         </span>
                     )}

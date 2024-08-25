@@ -1,13 +1,17 @@
 import React from 'react';
 import { GlobalSearchBar } from '../../components/Inputs';
 import { TagMultiSelectDropdown } from '../../components/Dropdown';
+
+import { listTagService } from '../../services/tags';
 import RecommendedTable from '../dashboard/RecommendedTable';
+import { toast } from 'react-toastify';
+import { TOAST_CONFIG } from '../../Constants';
 
 const SearchFilters = () => {
 
-    let tagOptions = [
+    let [tagOptions, setTagOptions] = React.useState([
         "array", "sorting", "searching", "graphs", "math"
-    ];
+    ]);
 
     const [search, setSearch] = React.useState("");
     const [filters, setFilters] = React.useState({
@@ -28,6 +32,18 @@ const SearchFilters = () => {
         })
     }
 
+    const getTags = async () => {
+        const resp = await listTagService();
+        if (!resp.status) {
+            toast.error(resp.json.message, TOAST_CONFIG);
+            return;
+        }
+        else {
+            const tagList = resp.json.map(entry => entry.name);
+            setTagOptions(tagList);
+        }
+    }
+
     React.useEffect(() => {
         const typingTimer = setTimeout(() => {
             setFilters({
@@ -37,6 +53,10 @@ const SearchFilters = () => {
         }, 1000);
         return () => clearTimeout(typingTimer);
     }, [search]);
+
+    React.useEffect(() => {
+        getTags();
+    }, []);
 
     return (
         <div className='px-5 py-4 flex flex-col gap-3'>

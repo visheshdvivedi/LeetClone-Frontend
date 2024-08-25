@@ -2,6 +2,8 @@ import React from 'react';
 import "./ProfilePage.css";
 import { useNavigate } from 'react-router-dom';
 
+import { getProfilePictureService } from '../services/account';
+
 import Header from '../parts/Header';
 import Footer from '../parts/Footer';
 
@@ -11,22 +13,40 @@ import { DiPython, DiJava, DiJavascript } from 'react-icons/di';
 
 import ActivityTable from "../parts/dashboard/ActivityTable"
 import CustomModal from "../components/Modals";
+import { toast } from 'react-toastify';
+import { TOAST_CONFIG } from '../Constants';
 
 const ProfilePage = () => {
 
     const navigate = useNavigate();
     const [openActivityModal, setOpenActivityModal] = React.useState(false);
 
+    const [profilePic, setProfilePic] = React.useState("./profile_pic.png")
+
     const tags = [
         { name: "array", count: 12 },
         { name: "sorting", count: 7 },
         { name: "searching", count: 5 }
     ]
+
     const xLabels = new Array(24).fill(0).map((_, i) => "")
     const yLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     const data = new Array(yLabels.length).fill(0).map(() => new Array(xLabels.length).fill(0).map(() => Math.floor(Math.random() * 100)));
 
+    const updateProfilePicture = async () => {
+        const resp = await getProfilePictureService();
+        if (!resp.status) {
+            return;
+        }
+        else {
+            setProfilePic(resp.json.image);
+        }
+    }
+
     React.useEffect(() => {
+
+        updateProfilePicture();
+
         var elements = document.querySelectorAll("*[style]");
         Array.prototype.forEach.call(elements, (element) => {
             var value = element.getAttribute("style");
@@ -47,7 +67,7 @@ const ProfilePage = () => {
                 <div className='min-w-[25%] dark:bg-neutral-800 dark:text-white px-5 py-4 flex flex-col gap-4'>
 
                     <div className='flex flex-row gap-3 w-full'>
-                        <img src="/profile_pic.png" className='rounded' width={100} />
+                        <img src={profilePic} alt="profile picture" className='rounded aspect-square' width={100} />
                         <div className='flex flex-col justify-between flex-1'>
                             <div className='flex flex-col'>
                                 <span className='font-bold'>Vishesh Dvivedi</span>

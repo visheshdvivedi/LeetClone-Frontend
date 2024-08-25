@@ -32,7 +32,7 @@ const TabsDiv = ({ problem, codeSubmitting, preview = false }) => {
                     <SolutionDiv solution={solution} preview={preview} />
                 )) }
             </div>
-            <div className={`flex-1 overflow-auto ${ selectedTab != 2 && "hidden" }`}>
+            <div className={`flex flex-col max-h-[500px] overflow-auto ${ selectedTab != 2 && "hidden" }`}>
                 <SubmissionsDiv problem_id={problem.public_id} codeSubmitting={codeSubmitting} />
             </div>
         </div>

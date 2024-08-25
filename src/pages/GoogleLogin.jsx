@@ -29,6 +29,7 @@ const GoogleLogin = () => {
 
         if (access && refresh) {
             localStorage.setItem("token", JSON.stringify({ access: access, refresh: refresh }));
+            console.log("Email login access token:", access);
             performLogin();
         }
         else {

@@ -36,70 +36,70 @@ const CardList = () => {
             </div>
             <div className='flex-1 flex flex-row justify-evenly items-center bg-slate-100 border-2 border-slate-300 border-l-0 rounded-r-lg dark:bg-neutral-800 dark:border-neutral-600'>
 
-                <div class="p-4 md:p-5 border-2 border-blue-600 rounded-lg min-w-48">
-                    <div class="flex items-center gap-x-2">
-                        <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                <div className="p-4 md:p-5 border-2 border-blue-600 rounded-lg min-w-48">
+                    <div className="flex items-center gap-x-2">
+                        <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">
                             School
                         </p>
                     </div>
 
-                    <h3 class="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
-                        <span class="font-semibold">
+                    <h3 className="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
+                        <span className="font-semibold">
                             { stats.solved.school }
                         </span>
-                        <span class="text-gray-500 dark:text-gray-400">
+                        <span className="text-gray-500 dark:text-gray-400">
                             &nbsp;/ { stats.total.school }
                         </span>
                     </h3>
                 </div>
 
 
-                <div class="p-4 md:p-5 border-2 border-emerald-600 rounded-lg min-w-48 ">
-                    <div class="flex items-center gap-x-2">
-                        <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                <div className="p-4 md:p-5 border-2 border-emerald-600 rounded-lg min-w-48 ">
+                    <div className="flex items-center gap-x-2">
+                        <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
                             Easy
                         </p>
                     </div>
 
-                    <h3 class="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
-                        <span class="font-semibold">
+                    <h3 className="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
+                        <span className="font-semibold">
                             { stats.solved.easy }
                         </span>
-                        <span class="text-gray-500 dark:text-neutral-500">
+                        <span className="text-gray-500 dark:text-neutral-500">
                             &nbsp;/ { stats.total.easy }
                         </span>
                     </h3>
                 </div>
 
-                <div class="p-4 md:p-5 border-2 border-orange-600 rounded-lg min-w-48 ">
-                    <div class="flex items-center gap-x-2">
-                        <p class="text-sm font-semibold text-orange-600 dark:text-orange-400">
+                <div className="p-4 md:p-5 border-2 border-orange-600 rounded-lg min-w-48 ">
+                    <div className="flex items-center gap-x-2">
+                        <p className="text-sm font-semibold text-orange-600 dark:text-orange-400">
                             Medium
                         </p>
                     </div>
 
-                    <h3 class="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
-                        <span class="font-semibold">
+                    <h3 className="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
+                        <span className="font-semibold">
                             { stats.solved.medium }
                         </span>
-                        <span class="text-gray-500 dark:text-neutral-500">
+                        <span className="text-gray-500 dark:text-neutral-500">
                             &nbsp;/ { stats.total.medium }
                         </span>
                     </h3>
                 </div>
 
-                <div class="p-4 md:p-5 border-2 border-red-600 rounded-lg min-w-48 ">
-                    <div class="flex items-center gap-x-2">
-                        <p class="text-sm font-semibold text-red-600 dark:text-red-400">
+                <div className="p-4 md:p-5 border-2 border-red-600 rounded-lg min-w-48 ">
+                    <div className="flex items-center gap-x-2">
+                        <p className="text-sm font-semibold text-red-600 dark:text-red-400">
                             Hard
                         </p>
                     </div>
 
-                    <h3 class="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
-                        <span class="font-semibold">
+                    <h3 className="mt-2 text-2xl sm:text-3xl lg:text-3xl text-gray-800 dark:text-neutral-200">
+                        <span className="font-semibold">
                             { stats.solved.hard }
                         </span>
-                        <span class="text-gray-500 dark:text-neutral-500">
+                        <span className="text-gray-500 dark:text-neutral-500">
                             &nbsp;/ { stats.total.hard }
                         </span>
                     </h3>

@@ -31,9 +31,9 @@ const HowItWorkSection = () => {
     return (
         <div className='bg-white flex flex-row justify-center dark:bg-black dark:text-white py-10'>
             <div className='w-[85rem] flex flex-row justify-evenly items-center px-5 py-4'>
-                <div className='w-1/2 flex flex-col items-center gap-5'>
+                <div className='flex flex-col items-center gap-5'>
                     <span className='font-bold bg-clip-text text-violet-600 dark:text-sky-400 text-transparent' style={{ fontSize: "36px" }}>How It Works</span>
-                    <div className='grid grid-rows-2 grid-cols-2 gap-8'>
+                    <div className='grid grid-rows-2 grid-cols-1 sm:grid-cols-2 gap-8'>
 
                     { steps.map(step => (
                         <div key={step.title} className='flex flex-col justify-start items-center px-3 py-2 rounded-xl gap-3 border bg-stone-50 dark:bg-black dark:border-0'>
@@ -45,7 +45,7 @@ const HowItWorkSection = () => {
 
                     </div>
                 </div>
-                <img src={tutorialIcon} width={400} />
+                <img src={tutorialIcon} width={400} alt="tutorial icon" className='hidden lg:block' />
             </div>
         </div>
     )

@@ -52,7 +52,7 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
 
         for (let i = 0; i < Math.ceil(tableData.length / pageSize); i++) {
             pages.push(
-                <button type="button" class={`py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg ${selectedPage === i ? "bg-slate-200 dark:bg-neutral-600" : "bg-white text-gray-800 hover:bg-gray-50"} shadow-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`} onClick={() => setSelectedPage(i)}>
+                <button type="button" className={`py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg ${selectedPage === i ? "bg-slate-200 dark:bg-neutral-600" : "bg-white text-gray-800 hover:bg-gray-50"} shadow-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`} onClick={() => setSelectedPage(i)}>
                     {i + 1}
                 </button>
             )
@@ -147,19 +147,19 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                                         {[1, 2, 3, 4, 5].map((data, index) => (
                                             <tr>
                                                 <td className="size-px whitespace-nowrap px-6 py-3">
-                                                    <div class="h-5 bg-neutral-700 rounded col-span-2"></div>
+                                                    <div className="h-5 bg-neutral-700 rounded col-span-2"></div>
                                                 </td>
                                                 <td className="size-px whitespace-nowrap px-6 py-3">
-                                                    <div class="h-5 bg-neutral-700 rounded col-span-2"></div>
+                                                    <div className="h-5 bg-neutral-700 rounded col-span-2"></div>
                                                 </td>
                                                 <td className="size-px whitespace-nowrap px-6 py-3">
-                                                    <div class="h-5 bg-neutral-700 rounded col-span-2"></div>
+                                                    <div className="h-5 bg-neutral-700 rounded col-span-2"></div>
                                                 </td>
                                                 <td className="size-px whitespace-nowrap px-6 py-3">
-                                                    <div class="h-5 bg-neutral-700 rounded col-span-2"></div>
+                                                    <div className="h-5 bg-neutral-700 rounded col-span-2"></div>
                                                 </td>
                                                 <td className="size-px whitespace-nowrap px-6 py-3">
-                                                    <div class="h-5 bg-neutral-700 rounded col-span-2"></div>
+                                                    <div className="h-5 bg-neutral-700 rounded col-span-2"></div>
                                                 </td>
                                             </tr>
                                         ))}
@@ -169,10 +169,10 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                                 {/* End Table */}
 
                                 {/* Pagination Start */}
-                                <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
+                                <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
                                     <div>
-                                        <p class="text-sm text-gray-600 dark:text-neutral-400">
-                                            <span class="font-semibold text-gray-800 dark:text-neutral-200">
+                                        <p className="text-sm text-gray-600 dark:text-neutral-400">
+                                            <span className="font-semibold text-gray-800 dark:text-neutral-200">
                                                 {tableData.length}
                                             </span> results
                                         </p>
@@ -181,15 +181,15 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                                     <div className='flex flex-row justify-center items-center'>
                                         {pagination && (
                                             <>
-                                                <div class="inline-flex gap-x-2">
-                                                    <button type="button" class="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getPrevPage}>
-                                                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                                                <div className="inline-flex gap-x-2">
+                                                    <button type="button" className="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getPrevPage}>
+                                                        <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                                                         Prev
                                                     </button>
                                                     {getPages()}
-                                                    <button type="button" class="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getNextPage}>
+                                                    <button type="button" className="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getNextPage}>
                                                         Next
-                                                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                                                        <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                                                     </button>
                                                 </div>
                                             </>
@@ -290,7 +290,7 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                                             <td className="size-px whitespace-nowrap px-6 py-3">
                                                 <div className='flex flex-row gap-2'>
                                                     {data.tags.map(tag => (
-                                                        <span class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 dark:bg-neutral-700 dark:text-gray-400">
+                                                        <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 dark:bg-neutral-700 dark:text-gray-400">
                                                             {tag.name}
                                                         </span>
                                                     ))}
@@ -304,10 +304,10 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                             {/* End Table */}
 
                             {/* Pagination Start */}
-                            <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
+                            <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
                                 <div>
-                                    <p class="text-sm text-gray-600 dark:text-neutral-400">
-                                        <span class="font-semibold text-gray-800 dark:text-neutral-200">
+                                    <p className="text-sm text-gray-600 dark:text-neutral-400">
+                                        <span className="font-semibold text-gray-800 dark:text-neutral-200">
                                             {tableData.length}
                                         </span> results
                                     </p>
@@ -316,15 +316,15 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                                 <div className='flex flex-row justify-center items-center'>
                                     {pagination && (
                                         <>
-                                            <div class="inline-flex gap-x-2">
-                                                <button type="button" class="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getPrevPage}>
-                                                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                                            <div className="inline-flex gap-x-2">
+                                                <button type="button" className="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getPrevPage}>
+                                                    <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                                                     Prev
                                                 </button>
                                                 {getPages()}
-                                                <button type="button" class="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getNextPage}>
+                                                <button type="button" className="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" onClick={getNextPage}>
                                                     Next
-                                                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                                                    <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                                                 </button>
                                             </div>
                                         </>

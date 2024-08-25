@@ -32,7 +32,7 @@ const EditProfilePage = () => {
                             <span className='text-sm'>Change Picture</span>
                             <input type="file" accept='.png,.jpg,.jpeg' className='hidden' ref={fileUploadRef} onChange={updateProfilePic} />
                         </div>
-                        <img src="./profile_pic.png" width="200" height="200" alt="" className='rounded-lg border-2 border-white max-w-[200px] max-h-[200px]' ref={profilePicRef} />
+                        <img src="./profile_pic.png" width="200" height="200" alt="profile picture" className='rounded-lg border-2 border-white max-w-[200px] max-h-[200px]' ref={profilePicRef} />
                     </div>
 
                     <div className='w-full flex flex-col justify-between items-center gap-5 px-10'>

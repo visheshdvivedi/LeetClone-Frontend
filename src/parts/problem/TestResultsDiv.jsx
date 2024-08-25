@@ -52,7 +52,7 @@ const TestResultsDiv = ({ problem, results, codeRunning }) => {
     if (codeRunning) {
         return (
             <div className='px-3 py-1 flex flex-col justify-center items-center py-10 gap-3'>
-                <span class="animate-spin inline-block size-10 border-[3px] border-current border-t-transparent text-white rounded-full" role="status" aria-label="loading">
+                <span className="animate-spin inline-block size-10 border-[3px] border-current border-t-transparent text-white rounded-full" role="status" aria-label="loading">
                 </span>
                 <span>Loading</span>
             </div>

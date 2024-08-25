@@ -13,7 +13,7 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
     const [defaultCodes, setDefaultCodes] = React.useState(problem.defaultCode);
 
     const [settings, setSettings] = React.useState({
-        language: problem.defaultCode[0].language.name
+        language: localStorage.getItem("preferred_lang") ? localStorage.getItem("preferred_lang") : problem.defaultCode[0].language.name
     });
 
     const updateSettings = (key, value) => {
@@ -58,12 +58,22 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
                 : item
             )
         );
+
+        let key = `${problem.public_id}_${settings.language}`
+        localStorage.setItem(key, value);
     }
 
     const resetToDefaultCode = () => {
         const defaultLangCode = defaultCodes.find(code => code.language.name === settings.language);
         updateCodeValue(defaultLangCode.value);
         editor.getModel().setValue(defaultLangCode.value);
+    }
+
+    const getInitialCodeValue = () => {
+        let key = `${problem.public_id}_${settings.language}`;
+        let val = localStorage.getItem(key);
+        if (val) return val;
+        else codes[settings.language];
     }
 
     React.useEffect(() => {
@@ -78,11 +88,20 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
             return;
         }
 
-        updateCodeValue(defaultLangCode.value);
-        model.setValue(defaultLangCode.value);
+        let key = `${problem.public_id}_${settings.language}`;
+        let value = localStorage.getItem(key);
+
+        if (value) {
+            updateCodeValue(value);
+            model.setValue(value);
+        }
+        else {
+            updateCodeValue(defaultLangCode.value);
+            model.setValue(defaultLangCode.value);
+        }
 
         setLanguage(defaultLangCode.language.public_id);
-
+        localStorage.setItem("preferred_lang", settings.language);
     }, [settings.language]);
 
     React.useEffect(() => {
@@ -106,7 +125,7 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
                     <MdRefresh />
                 </button>
             </div>
-            <Editor value={codes[settings.language]} onChange={(val) => updateCodeValue(val)} height={"40rem"} className='flex-1' options={{
+            <Editor value={getInitialCodeValue()} onChange={(val) => updateCodeValue(val)} height={"40rem"} className='flex-1' options={{
                 quickSuggestions: false,
                 wordBasedSuggestions: false
             }} theme='vs-dark' onMount={onEditorMount} defaultLanguage={settings.language} defaultValue={setDefaultValue()} />

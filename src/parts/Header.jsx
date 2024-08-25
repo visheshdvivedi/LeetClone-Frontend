@@ -25,18 +25,18 @@ const Header = () => {
     ]
     const navigate = useNavigate();
     const { isAuthenticated, user } = React.useContext(AuthContext);
-
+    const [profilePic, setProfilePic] = React.useState();
 
     return (
         <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4 bg-transparent">
             <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div className="flex items-center justify-between">
-                    <img src={icon} width={15} className='me-2' />
+                    <img src={icon} width={15} className='me-2' alt="profile-picture" />
                     <a className="flex-none text-xl font-semibold text-black dark:text-white" href="#">LeetClone</a>
                     <div className="sm:hidden">
                         <button type="button" className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10" data-hs-collapse="#navbar-with-mega-menu" aria-controls="navbar-with-mega-menu" aria-label="Toggle navigation">
-                            <svg className="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
-                            <svg className="hs-collapse-open:block hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                            <svg className="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
+                            <svg className="hs-collapse-open:block hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                         </button>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const Header = () => {
                             </>
                         ) : (
                             <>
-                                <button onClick={() => navigate("/login")} className='px-2 py-1 outline outline-violet-600 rounded-md text-gradient-to-tl from-blue-600 to-violet-600 dark:text-white'>
+                                <button onClick={() => navigate("/login")} className='px-2 py-1 outline outline-violet-600 rounded-md text-gradient-to-tl from-blue-600 to-violet-600 dark:text-white w-[98%] ms-1 sm:w-auto'>
                                     Login
                                 </button>
                                 <button onClick={() => navigate("/register")} className='inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-md focus:outline-none focus:ring-1 focus:ring-gray-600 py-1 px-2 dark:focus:ring-offset-gray-800'>Register</button>
