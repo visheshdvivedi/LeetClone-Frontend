@@ -36,7 +36,7 @@ const Header = () => {
                 let pic = resp.json.profile_picture;
                 if (pic.includes("/https%3A")) {
                     pic = pic.replace("/https%3A", "https://");
-                    setProfileInfo(pic);
+                    setProfilePic(pic);
                 }
                 else{
                     pic = BASE_URL + resp.json.profile_picture;
