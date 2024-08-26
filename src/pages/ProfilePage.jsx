@@ -51,10 +51,15 @@ const ProfilePage = () => {
             return;
         }
         else {
-            console.log(resp.json);
             if (resp.json.profile_picture) {
-                let imageURL = BASE_URL + resp.json.profile_picture;
-                setProfilePic(imageURL);
+                let pic = resp.json.profile_picture;
+                if (pic.includes("://")) {
+                    setProfileInfo(pic);
+                }
+                else{
+                    let imageURL = BASE_URL + resp.json.profile_picture;
+                    setProfilePic(imageURL);
+                }
             }
         }
     }
