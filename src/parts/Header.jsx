@@ -34,6 +34,7 @@ const Header = () => {
         if (resp.status) {
             if (resp.json.profile_picture) {
                 let pic = resp.json.profile_picture;
+                console.log("Pic:", pic);
                 if (pic.includes("://")) {
                     setProfileInfo(pic);
                 }
