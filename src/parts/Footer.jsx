@@ -10,7 +10,7 @@ const Footer = () => {
                     <a className="flex-none text-md md:text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">LeetClone</a>
                 </div>
 
-                <div className="flex flex-row justify-center items-center dark:text-white">
+                <div className="flex flex-row justify-center items-center dark:text-white text-center">
                     <span className='text-sm'>
                     Resume project created by <span className='font-bold'>@visheshdvivedi</span>
                     </span>

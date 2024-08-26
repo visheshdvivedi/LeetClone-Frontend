@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import icon from "../assets/icon.png";
 
 import { AuthContext } from '../contexts/AuthContext'
-import { IoMoon, IoSunny } from 'react-icons/io5';
 import { ProfileDropdown } from '../components/Dropdown';
+import { getProfilePictureService } from '../services/account';
 
 const Header = () => {
 
@@ -25,7 +25,14 @@ const Header = () => {
     ]
     const navigate = useNavigate();
     const { isAuthenticated, user } = React.useContext(AuthContext);
-    const [profilePic, setProfilePic] = React.useState();
+    const [profilePic, setProfilePic] = React.useState('/profile_pic.png');
+
+    const updateProfilePicture = async () => {
+        const resp = await getProfilePictureService();
+        if (resp.status) setProfilePic(resp.json.image);
+    }
+
+    React.useEffect(() => { updateProfilePicture() });
 
     return (
         <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4 bg-transparent">
@@ -53,7 +60,7 @@ const Header = () => {
 
                         {isAuthenticated() ? (
                             <>
-                                <ProfileDropdown user={user} />
+                                <ProfileDropdown user={user} pic={profilePic} />
                             </>
                         ) : (
                             <>

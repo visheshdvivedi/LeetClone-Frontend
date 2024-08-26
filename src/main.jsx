@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify'
 import AuthProvider from './contexts/AuthContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
+    <>
         <ToastContainer 
             position="top-right"
             autoClose={5000}
@@ -26,5 +26,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <AuthProvider>
             <App />
         </AuthProvider>
-    </React.StrictMode>,
+    </>
 )

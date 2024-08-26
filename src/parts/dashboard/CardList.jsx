@@ -27,16 +27,16 @@ const CardList = () => {
         return null;
 
     return (
-        <div className='flex flex-row w-full'>
+        <div className='flex flex-col lg:flex-row  w-full'>
             <div className='bg-white px-7 py-10 flex flex-col justify-center items-center dark:bg-stone-700 dark:text-white rounded-l-lg'>
                 <span>Total Problems Solved</span>
                 <span className='font-bold bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 dark:from-blue-400 dark:to-violet-400 text-transparent' style={{ fontSize: "36px" }}>
                     { stats.solved.all }
                 </span>
             </div>
-            <div className='flex-1 flex flex-row justify-evenly items-center bg-slate-100 border-2 border-slate-300 border-l-0 rounded-r-lg dark:bg-neutral-800 dark:border-neutral-600'>
+            <div className='flex-1 grid grid-cols-1 sm:grid-cols-4 gap-5 bg-slate-100 border-2 border-slate-300 border-l-0 rounded-r-lg dark:bg-neutral-800 dark:border-neutral-600 px-5 py-5'>
 
-                <div className="p-4 md:p-5 border-2 border-blue-600 rounded-lg min-w-48">
+                <div className="p-4 md:p-5 border-2 border-blue-600 rounded-lg flex-1 flex sm:items-start items-center flex-col">
                     <div className="flex items-center gap-x-2">
                         <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">
                             School
@@ -54,7 +54,7 @@ const CardList = () => {
                 </div>
 
 
-                <div className="p-4 md:p-5 border-2 border-emerald-600 rounded-lg min-w-48 ">
+                <div className="p-4 md:p-5 border-2 border-emerald-600 rounded-lg flex-1 flex sm:items-start items-center flex-col ">
                     <div className="flex items-center gap-x-2">
                         <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
                             Easy
@@ -71,7 +71,7 @@ const CardList = () => {
                     </h3>
                 </div>
 
-                <div className="p-4 md:p-5 border-2 border-orange-600 rounded-lg min-w-48 ">
+                <div className="p-4 md:p-5 border-2 border-orange-600 rounded-lg flex-1 flex sm:items-start items-center flex-col ">
                     <div className="flex items-center gap-x-2">
                         <p className="text-sm font-semibold text-orange-600 dark:text-orange-400">
                             Medium
@@ -88,7 +88,7 @@ const CardList = () => {
                     </h3>
                 </div>
 
-                <div className="p-4 md:p-5 border-2 border-red-600 rounded-lg min-w-48 ">
+                <div className="p-4 md:p-5 border-2 border-red-600 rounded-lg flex-1 flex sm:items-start items-center flex-col ">
                     <div className="flex items-center gap-x-2">
                         <p className="text-sm font-semibold text-red-600 dark:text-red-400">
                             Hard

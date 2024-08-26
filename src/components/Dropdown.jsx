@@ -5,7 +5,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import { AiOutlineBell } from 'react-icons/ai';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
-export const ProfileDropdown = ({ user }) => {
+export const ProfileDropdown = ({ user, pic }) => {
 
     const navigate = useNavigate();
     const { logout } = React.useContext(AuthContext);
@@ -43,7 +43,7 @@ export const ProfileDropdown = ({ user }) => {
     return (
         <>
             <button onClick={() => setOpened(!opened)} id="hs-dropdown-example" type="button" className=''>
-                <img src="/profile_pic.png" alt="profile picture" className='rounded-full' width={25} />
+                <img src={pic} alt="profile picture" className='rounded-full' width={25} />
             </button>
 
             <div id="profile-pic-container" className={`${opened ? "" : "hidden"} absolute right-15 top-12 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 w-56 z-20 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" aria-labelledby="hs-dropdown-example`}>
@@ -160,7 +160,7 @@ export const TagMultiSelectDropdown = ({ options, updateOptions }) => {
                 { <IoIosArrowDown /> }
             </button>
 
-            <div id="tag-filter-container" className={`${opened ? "" : "hidden"} absolute right-15 top-36 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 w-56 z-20 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" aria-labelledby="hs-dropdown-example`}>
+            <div id="tag-filter-container" className={`${opened ? "" : "hidden"} absolute right-15 top-60 sm:top-36 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 w-56 z-20 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700" aria-labelledby="hs-dropdown-example`}>
                 <input type="text" className='rounded-lg bg-slate-100 dark:bg-neutral-700 dark:text-white w-full focus-visible:outline-none px-2 text-xs px-3 py-2' value={search} onChange={(e) => setSearch(e.target.value)} />
                 <div className='mt-2 flex flex-wrap gap-2'>
                     { getTags().map(option => (

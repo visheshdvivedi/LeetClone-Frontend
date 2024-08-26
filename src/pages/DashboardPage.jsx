@@ -36,22 +36,12 @@ const DashboardPage = () => {
         }
     }, [openRecommendModal]);
 
-    console.log('page rerendered');
-    console.log(user);
-
-    const get_username = (username) => {
-        if (username.includes("_")) {
-            return username.split("_").join(" ");
-        }
-        return username;
-    }
-
     return (
-        <div className='w-full h-full bg-slate-200 dark:bg-black flex flex-col justify-center items-center px-12 gap-5'>
+        <div className='w-full h-full bg-slate-200 dark:bg-black flex flex-col justify-center items-center px-6 sm:px-12 gap-5'>
             <Header />
             {/* <Topbar /> */}
             <div className='w-full flex flex-row justify-start'>
-                <span className='font-bold text-xl dark:text-white'>Welcome, { get_username(user.username) }</span>
+                <span className='font-bold text-xl dark:text-white'>Welcome, { user.first_name }</span>
             </div>
             <CardList />
             <ActivityTable onClickAll={() => setOpenActivityModal(true)} />
