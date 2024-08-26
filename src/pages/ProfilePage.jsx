@@ -2,6 +2,7 @@ import React from 'react';
 import "./ProfilePage.css";
 import { useNavigate } from 'react-router-dom';
 
+import { BASE_URL } from '../Constants';
 import { getProfilePictureService, getProfileInfoService } from '../services/account';
 
 import Header from '../parts/Header';
@@ -50,7 +51,11 @@ const ProfilePage = () => {
             return;
         }
         else {
-            setProfilePic(resp.json.image);
+            console.log(resp.json);
+            if (resp.json.profile_picture) {
+                let imageURL = BASE_URL + resp.json.profile_picture;
+                setProfilePic(imageURL);
+            }
         }
     }
 
@@ -64,16 +69,17 @@ const ProfilePage = () => {
     }
 
     React.useEffect(() => {
-
         updateProfileInfo();
         updateProfilePicture();
+    }, []);
 
+    React.useEffect(() => {
         var elements = document.querySelectorAll("*[style]");
         Array.prototype.forEach.call(elements, (element) => {
             var value = element.getAttribute("style");
             element.style.color = "white";
         })
-    }, [profileInfo]);
+    }, [profileInfo])
 
     if (!profileInfo) return (
         <div>

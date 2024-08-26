@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import icon from "../assets/icon.png";
 
+import { BASE_URL } from '../Constants';
+
 import { AuthContext } from '../contexts/AuthContext'
 import { ProfileDropdown } from '../components/Dropdown';
 import { getProfilePictureService } from '../services/account';
@@ -29,7 +31,13 @@ const Header = () => {
 
     const updateProfilePicture = async () => {
         const resp = await getProfilePictureService();
-        if (resp.status) setProfilePic(resp.json.image);
+        if (resp.status) {
+            console.log(resp.json);
+            if (resp.json.profile_picture) {
+                let imageURL = BASE_URL + resp.json.profile_picture;
+                setProfilePic(imageURL);
+            }
+        }
     }
 
     React.useEffect(() => { updateProfilePicture() });
