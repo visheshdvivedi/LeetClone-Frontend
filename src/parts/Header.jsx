@@ -34,14 +34,15 @@ const Header = () => {
         if (resp.status) {
             if (resp.json.profile_picture) {
                 let pic = resp.json.profile_picture;
-                console.log("Pic:", pic);
-                if (pic.includes("://")) {
+                if (pic.includes("/https%3A")) {
+                    pic = pic.replace("/https%3A", "https://");
                     setProfileInfo(pic);
                 }
                 else{
-                    let imageURL = BASE_URL + resp.json.profile_picture;
-                    setProfilePic(imageURL);
+                    pic = BASE_URL + resp.json.profile_picture;
+                    setProfilePic(pic);
                 }
+                console.log("Pic:", pic);
             }
         }
     }
