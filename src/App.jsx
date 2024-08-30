@@ -33,7 +33,6 @@ function App() {
      return (
           <Router>
                <Routes>
-                    <Route path="*" element={<NotFoundPage />} />
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/register" element={<RegiserPage />} />
@@ -63,11 +62,12 @@ function App() {
                               <EditProfilePage />
                          </AuthenticatedRoute>
                     } />
-                    {/* <Route path={"/create-problem"} element={
+                    <Route path={"/create-problem"} element={
                          <AuthenticatedRoute>
                               <CreateNewProblem />
                          </AuthenticatedRoute>
-                    } /> */}
+                    } />
+                    <Route path="*" element={<NotFoundPage />} />
                </Routes>
           </Router>
      )

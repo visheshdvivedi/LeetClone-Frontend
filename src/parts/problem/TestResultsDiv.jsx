@@ -94,6 +94,11 @@ const TestResultsDiv = ({ problem, results, codeRunning }) => {
                         <span className='py-1 text-gray-400'>Standard Error = </span>
                         <span className='px-3 py-2 bg-neutral-700 rounded-lg font-mono text-xs'>{results['submissions'][selectedCase].stderr}</span>
                     </div>
+                ) : results['submissions'][selectedCase].compile_output ? (
+                    <div className='flex flex-col text-sm'>
+                        <span className='py-1 text-gray-400'>Standard Error = </span>
+                        <span className='px-3 py-2 bg-neutral-700 rounded-lg font-mono text-xs'>{results['submissions'][selectedCase].compile_output}</span>
+                    </div>
                 ) : (
                     <div className='flex flex-col text-sm'>
                         <span className='py-1 text-gray-400'>Actual output = </span>
