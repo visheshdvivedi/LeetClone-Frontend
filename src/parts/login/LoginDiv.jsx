@@ -130,7 +130,7 @@ const LoginDiv = () => {
             'https://www.googleapis.com/auth/userinfo.email',
             'https://www.googleapis.com/auth/userinfo.profile'
         ].join(' ');
-
+        console.log(`Google URL = ${BASE_URL}/${REDIRECT_URI}`);
         const params = {
             response_type: 'code',
             client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,

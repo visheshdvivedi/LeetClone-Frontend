@@ -276,7 +276,7 @@ const RecommendedTable = ({ header = true, pagination = false, pageSize = 5, onC
                                         <tr>
                                             <td className="size-px whitespace-nowrap px-6 py-3">
                                                 <span className="text-sm text-gray-800 dark:text-neutral-200">
-                                                    {index + 1}
+                                                    {(selectedPage) * pageSize + (index + 1)}
                                                 </span>
                                             </td>
                                             <td className="size-px whitespace-nowrap px-6 py-3">
