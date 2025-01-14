@@ -5,7 +5,7 @@ let environment = import.meta.env.VITE_ENVIRONMENT;
 if (environment === 'dev')
     baseURL = "http://localhost:8000";
 else if (environment === 'prod')
-    baseURL = "https://20.40.53.161"; 
+    baseURL = "http://20.40.53.161"; 
 
 export const BASE_URL = baseURL;
 const BASE_API_URL = baseURL + "/api/v1";
