@@ -57,29 +57,14 @@ const Stepper = () => {
             name: "Find Smallest Element",
             difficulty: 1,
             description: "Given a array `nums` of size `n`, find the smallest element present in the array",
-            tags: [
-                "array"
-            ],
-            constraints: ["0 < n < 10^5", "-10^9 < nums[i] < 10^9"],
+            tags: [],
+            constraints: [],
             solutions: [
                 {
                     name: "Brute Force",
                     intution: "The simplest approach is to iterate through the array and keep track of the smallest element found so far.",
                     algorithm: "Initialize the smallest element with the first element of the array.Iterate through the array from the second element to the end. If the current element is smaller than the smallest element found so far, update the smallest element. Return the smallest element.",
-                    implementations: [
-                        {
-                            "language": "612451a8-0b9e-42ae-b1c6-6c8a8689b8d9",
-                            "value": "class Solution:\n\tdef findSmallestElement(nums, n):\n\t\tsmallest = nums[0]\n\t\n\t\tfor num in nums:\n\t\t\tif num < smallest:\n\t\t\t\tsmallest = num\n\t\n\t\treturn smallest"
-                        },
-                        {
-                            "language": "f184e7a9-4bbd-469f-901f-d56eb61c3e91",
-                            "value": "function findSmallestElement(nums, n) {\n\tlet smallest = nums[0]\n\n\tfor (let num in nums){\n\t\tif (num < smallest){\n\t\t\tsmallest = num\n\t\t}\n\t}\n\n\treturn smallest\n}"
-                        },
-                        {
-                            "language": "15ded783-2c6c-4e09-947e-3f25c654ff12",
-                            "value": "class Solution {\n\tpublic static int findSmallestElement(int[] nums, int n){\n\t\tint smallest = nums[0];\n\t\n\t\tfor (int i=0; i<n; i++) {\n\t\t\tif (nums[i] < smallest){\n\t\t\t\tsmallest = nums[i];\n\t\t\t}\n\t\t}\n\t\n\t\treturn smallest;\n\t}\n}"
-                        }
-                    ],
+                    implementations: [],
                     complexities: [
                         {
                             "type": 1,

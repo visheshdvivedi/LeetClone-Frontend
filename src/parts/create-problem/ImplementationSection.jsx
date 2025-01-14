@@ -58,6 +58,7 @@ const ImplementationSection = ({ data, errors, updateData }) => {
         const lang_id = languages.find(lang => lang.name === tab).public_id;
         console.log(lang_id);
 
+        
         const value = data.find(imp => imp.language === lang_id).value;
         console.log(value);
 
