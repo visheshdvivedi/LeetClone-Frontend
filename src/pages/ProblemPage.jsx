@@ -115,7 +115,7 @@ const ProblemPage = () => {
                 </div>
             </div>
 
-            <div className='h-[38rem] mt-5'>
+            <div className='h-[40rem] mt-5'>
                 <PanelGroup direction='horizontal' className='flex flex-row'>
                     <Panel className='border-2 border-neutral-700 rounded-lg bg-neutral-800'>
                         <TabsDiv problem={problem} codeSubmitting={codeSubmitting} />

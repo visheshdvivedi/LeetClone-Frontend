@@ -13,7 +13,8 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
     const [defaultCodes, setDefaultCodes] = React.useState(problem.defaultCode);
 
     const [settings, setSettings] = React.useState({
-        language: localStorage.getItem("preferred_lang") ? localStorage.getItem("preferred_lang") : problem.defaultCode[0].language.name
+        language: localStorage.getItem("preferred_lang") ? localStorage.getItem("preferred_lang") : problem.defaultCode[0].language.name,
+        fontSize: 12
     });
 
     const updateSettings = (key, value) => {
@@ -81,6 +82,14 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
             return;
 
         const model = editor.getModel();
+        monaco.editor
+    }, [settings.fontSize])
+
+    React.useEffect(() => {
+        if (!editor || !monaco)
+            return;
+
+        const model = editor.getModel();
         monaco.editor.setModelLanguage(model, settings.language);
 
         const defaultLangCode = codes.find(code => code.language.name === settings.language);
@@ -127,7 +136,8 @@ const EditorDiv = ({ problem, setCodeValue, setLanguage }) => {
             </div>
             <Editor value={getInitialCodeValue()} onChange={(val) => updateCodeValue(val)} height={"40rem"} className='flex-1' options={{
                 quickSuggestions: false,
-                wordBasedSuggestions: false
+                wordBasedSuggestions: false,
+                fontSize: settings.fontSize
             }} theme='vs-dark' onMount={onEditorMount} defaultLanguage={settings.language} defaultValue={setDefaultValue()} />
         </div>
     )
