@@ -127,7 +127,7 @@ const ProfilePage = () => {
             <Header />
             <div className='px-10 py-4 flex flex-col xl:flex-row gap-5'>
 
-                <div className='min-w-[25%] dark:bg-neutral-800 dark:text-white px-5 py-4 flex flex-col gap-4'>
+                <div className='w-[25%] dark:bg-neutral-800 dark:text-white px-5 py-4 flex flex-col gap-4'>
 
                     <div className='flex flex-col items-center min-[400px]:flex-row gap-3 w-full'>
                         <img src={profilePic} alt="profile picture" className='rounded aspect-square w-full min-[340px]:max-w-[100px]' />
@@ -170,7 +170,7 @@ const ProfilePage = () => {
 
                 </div>
 
-                <div className='flex flex-col gap-5'>
+                <div className='flex flex-col gap-5 flex-1'>
 
                     <div className='flex flex-col min-[860px]:flex-row gap-5'>
 

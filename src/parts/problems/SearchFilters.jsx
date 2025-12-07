@@ -59,7 +59,7 @@ const SearchFilters = () => {
     }, []);
 
     return (
-        <div className='px-5 py-4 flex flex-col gap-3'>
+        <div className='px-5 py-4 flex flex-col gap-5'>
             <span className='text-2xl dark:text-gray-300'>Search Problems</span>
             <div className='flex flex-col sm:flex-row justify-start items-center gap-4'>
 

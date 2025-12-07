@@ -104,7 +104,7 @@ const ProblemPage = () => {
         return null;
 
     return (
-        <div className='px-5 py-4 h-full bg-black text-white'>
+        <div className='min-h-screen flex flex-col px-5 py-4 bg-black text-white'>
             <div className='flex flex-row justify-between items-center gap-3'>
                 <div className='flex flex-row justify-start items-center gap-3'>
                     <span className='text-xl font-bold text-white'>{problem.name}</span>
@@ -115,7 +115,7 @@ const ProblemPage = () => {
                 </div>
             </div>
 
-            <div className='h-[40rem] mt-5'>
+            <div className='h-[calc(100vh-8rem)] mt-5'>
                 <PanelGroup direction='horizontal' className='flex flex-row'>
                     <Panel className='border-2 border-neutral-700 rounded-lg bg-neutral-800'>
                         <TabsDiv problem={problem} codeSubmitting={codeSubmitting} />

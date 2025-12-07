@@ -8,7 +8,7 @@ const ProblemsPage = () => {
     return (
         <>
             <Header />
-            <div className='sm:px-12 flex flex-col'>
+            <div className='sm:px-12 flex flex-col gap-3'>
                 <SearchFilters />
             </div>
             <Footer />
